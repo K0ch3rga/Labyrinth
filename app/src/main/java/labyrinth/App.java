@@ -8,7 +8,15 @@ public class App {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public void lab() {
+        Labyrinth lab = new LabyrinthGenerator(0).setWidth(5).generateLabyrinth();
+        lab.toConsole();
     }
+
+    public static void main(String[] args) {
+        // System.out.println(new App().getGreeting());
+        new App().lab();
+        System.out.println("Done");
+    }
+
 }
