@@ -1,9 +1,27 @@
 package labyrinth.rooms;
 
-// Made with State pattern
-public class Room implements IRoom {
-    IRoom roomType ;
 
+/**
+ * Room of Labyrinth <p>
+ * Made with State pattern <p>
+ * For all types see {@link RoomTypes}
+ * 
+ */
+public class Room implements IRoom {
+    private IRoom roomType;
+
+
+    /**
+     * Creates new Room of type {@link MissingRoom}
+     */
+    public Room() {
+        roomType = new MissingRoom();
+    }
+
+    /**
+     * Changes Room type
+     * @param types 
+     */
     public void changeType(RoomTypes types) {
         switch (types) {
             case EMPTY:
@@ -20,6 +38,11 @@ public class Room implements IRoom {
     }
 
     @Override
+    public RoomTypes getType() {
+        return roomType.getType();
+    }
+
+    @Override
     public void onEnter() {
         roomType.onEnter();
     }
@@ -28,4 +51,5 @@ public class Room implements IRoom {
     public String toString() {
         return roomType.toString();
     }
+
 }

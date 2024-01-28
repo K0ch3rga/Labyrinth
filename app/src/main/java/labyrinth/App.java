@@ -10,7 +10,7 @@ public class App {
 
     public void lab() {
         Labyrinth lab = new LabyrinthGenerator(0).setWidth(5).generateLabyrinth();
-        lab.toConsole();
+        System.out.println(lab.toString());
     }
 
     public static void main(String[] args) {
