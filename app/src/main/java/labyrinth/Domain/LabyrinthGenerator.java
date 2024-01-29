@@ -1,8 +1,8 @@
-package labyrinth;
+package labyrinth.Domain;
 
 import java.util.Random;
 
-import labyrinth.rooms.RoomTypes;
+import labyrinth.Domain.rooms.RoomTypes;
 
 // Made with Builder pattern
 public class LabyrinthGenerator {

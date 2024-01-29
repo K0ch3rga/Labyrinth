@@ -1,9 +1,11 @@
 package labyrinth;
 
 import org.junit.jupiter.api.Test;
+
+import labyrinth.Domain.rooms.Room;
+import labyrinth.Domain.rooms.RoomTypes;
+
 import static org.junit.jupiter.api.Assertions.*;
-import labyrinth.rooms.Room;
-import labyrinth.rooms.RoomTypes;
 
 public class RoomTest {
     Room room = new Room();

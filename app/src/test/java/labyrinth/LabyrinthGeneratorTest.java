@@ -1,6 +1,10 @@
 package labyrinth;
 
 import org.junit.jupiter.api.Test;
+
+import labyrinth.Domain.Labyrinth;
+import labyrinth.Domain.LabyrinthGenerator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LabyrinthGeneratorTest {

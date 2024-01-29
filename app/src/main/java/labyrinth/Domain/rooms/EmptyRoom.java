@@ -1,4 +1,4 @@
-package labyrinth.rooms;
+package labyrinth.Domain.rooms;
 
 public class EmptyRoom implements IRoom {
     RoomTypes type = RoomTypes.EMPTY;

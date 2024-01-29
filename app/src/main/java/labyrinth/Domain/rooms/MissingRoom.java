@@ -1,4 +1,4 @@
-package labyrinth.rooms;
+package labyrinth.Domain.rooms;
 
 public class MissingRoom implements IRoom {
     RoomTypes type = RoomTypes.MISSING;

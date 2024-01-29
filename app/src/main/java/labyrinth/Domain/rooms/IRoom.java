@@ -1,4 +1,4 @@
-package labyrinth.rooms;
+package labyrinth.Domain.rooms;
 
 public interface IRoom {
     public RoomTypes getType();

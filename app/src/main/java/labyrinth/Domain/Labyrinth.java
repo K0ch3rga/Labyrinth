@@ -1,6 +1,6 @@
-package labyrinth;
+package labyrinth.Domain;
 
-import labyrinth.rooms.Room;
+import labyrinth.Domain.rooms.Room;
 
 /**
  * Class to contain information about Labyrinth

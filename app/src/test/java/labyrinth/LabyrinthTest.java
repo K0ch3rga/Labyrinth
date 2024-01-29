@@ -2,7 +2,8 @@ package labyrinth;
 
 import org.junit.jupiter.api.Test;
 
-import labyrinth.rooms.Room;
+import labyrinth.Domain.Labyrinth;
+import labyrinth.Domain.rooms.Room;
 
 import static org.junit.jupiter.api.Assertions.*;
 

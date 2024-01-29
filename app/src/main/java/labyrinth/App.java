@@ -3,6 +3,9 @@
  */
 package labyrinth;
 
+import labyrinth.Domain.Labyrinth;
+import labyrinth.Domain.LabyrinthGenerator;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
