@@ -36,6 +36,7 @@ public class LabyrinthGenerator {
     public Labyrinth generateLabyrinth() {
         Labyrinth labyrinth = new Labyrinth(width, height);
         generateRooms(labyrinth);
+        generatePaths(labyrinth);
         return labyrinth;
     }
 
@@ -51,5 +52,9 @@ public class LabyrinthGenerator {
                 }
             }
         }
+    }
+
+    private void generatePaths(Labyrinth labyrinth) {
+
     }
 }
