@@ -13,8 +13,8 @@ import labyrinth.Domain.rooms.Room;
  * @see Room
  */
 public class Labyrinth {
-    Room[][] rooms;
-    Map<Room, List<Room>> paths;
+    private Room[][] rooms;
+    private Map<Room, List<Room>> paths;
 
     /**
      * Initializes all rooms according to the specified width and height
@@ -82,7 +82,7 @@ public class Labyrinth {
      * @param height
      * @return list of path leading from specified location
      */
-    public List<Room> getPaths(int width, int height) {
+    public List<Room> getAllPaths(int width, int height) {
         return paths.get(getRoom(width, height));
     }
 

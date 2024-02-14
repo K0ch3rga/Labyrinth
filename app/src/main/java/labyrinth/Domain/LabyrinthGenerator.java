@@ -1,7 +1,9 @@
 package labyrinth.Domain;
 
+import java.util.List;
 import java.util.Random;
 
+import labyrinth.Domain.rooms.Room;
 import labyrinth.Domain.rooms.RoomTypes;
 
 // Made with Builder pattern
@@ -10,6 +12,7 @@ public class LabyrinthGenerator {
     private int width = 10;
     private int height = 10;
     private int roomChance = 50;
+    private int closePathChanse = 75;
 
     public LabyrinthGenerator(long seed) {
         random = new Random(seed);
@@ -35,26 +38,33 @@ public class LabyrinthGenerator {
 
     public Labyrinth generateLabyrinth() {
         Labyrinth labyrinth = new Labyrinth(width, height);
-        generateRooms(labyrinth);
-        generatePaths(labyrinth);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                generateRooms(labyrinth, x, y);
+                generatePaths(labyrinth, x, y);
+            }
+        }
         return labyrinth;
     }
 
-    private void generateRooms(Labyrinth labyrinth) {
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                int rnd = random.nextInt(100);
-                System.out.println(rnd);
-                if (rnd > roomChance) {
-                    labyrinth.getRoom(x, y).changeType(RoomTypes.MISSING);
-                } else {
-                    labyrinth.getRoom(x, y).changeType(RoomTypes.EMPTY);
-                }
-            }
+    private void generateRooms(Labyrinth labyrinth, int width, int height) {
+        int rnd = random.nextInt(100);
+        if (rnd > roomChance) {
+            labyrinth.getRoom(width, height).changeType(RoomTypes.MISSING);
+        } else {
+            labyrinth.getRoom(width, height).changeType(RoomTypes.EMPTY);
         }
     }
 
-    private void generatePaths(Labyrinth labyrinth) {
-
+    private void generatePaths(Labyrinth labyrinth, int width, int height) {
+        List<Room> paths = labyrinth.getAllPaths(width, height);
+        for (Room room : labyrinth.getNearRooms(width, height)) {
+            int rnd = random.nextInt(100);
+            if (rnd > closePathChanse) {
+                paths.add(room);
+            } else {
+                // paths.remove(room);
+            }
+        }
     }
 }
