@@ -3,6 +3,7 @@
  */
 package labyrinth;
 
+import labyrinth.Application.ConsoleUI;
 import labyrinth.Domain.Labyrinth;
 import labyrinth.Domain.LabyrinthGenerator;
 
@@ -18,7 +19,8 @@ public class App {
 
     public static void main(String[] args) {
         // System.out.println(new App().getGreeting());
-        new App().lab();
+        // new App().lab();
+        new ConsoleUI().run();
         System.out.println("Done");
     }
 

@@ -11,7 +11,7 @@ public class LabyrinthGenerator {
     private Random random;
     private int width = 10;
     private int height = 10;
-    private int roomChance = 50;
+    private int roomChance = 90;
     private int closePathChanse = 75;
 
     public LabyrinthGenerator(long seed) {
@@ -31,7 +31,7 @@ public class LabyrinthGenerator {
 
     public LabyrinthGenerator setRoomChance(float roomChance) {
         // TODO make sure roomChanse only 0-1
-        this.roomChance = Math.round(Integer.MAX_VALUE * roomChance);
+        this.roomChance = (int)Math.floor(roomChance * 100)%100;
         return this;
     }
     // #endregion
