@@ -1,12 +1,11 @@
 package labyrinth.Application;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 import labyrinth.Domain.Labyrinth;
 import labyrinth.Domain.LabyrinthGenerator;
+import labyrinth.Domain.RandomGenerator;
 import labyrinth.Domain.rooms.Room;
 
 public class ConsoleUI implements Runnable {
@@ -23,7 +22,7 @@ public class ConsoleUI implements Runnable {
             int height = Integer.parseInt(reader.readLine());
 
             System.out.println("Generating");
-            LabyrinthGenerator generator = new LabyrinthGenerator(seed).setHeigth(height).setWidth(width);
+            LabyrinthGenerator generator = new RandomGenerator(seed).setHeigth(height).setWidth(width);
             Labyrinth labyrinth = generator.generateLabyrinth();
             StringBuilder output = new StringBuilder();
             int count = 0;

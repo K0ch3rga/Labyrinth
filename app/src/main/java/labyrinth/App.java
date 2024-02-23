@@ -5,7 +5,7 @@ package labyrinth;
 
 import labyrinth.Application.ConsoleUI;
 import labyrinth.Domain.Labyrinth;
-import labyrinth.Domain.LabyrinthGenerator;
+import labyrinth.Domain.RandomGenerator;
 
 public class App {
     public String getGreeting() {
@@ -13,7 +13,7 @@ public class App {
     }
 
     public void lab() {
-        Labyrinth lab = new LabyrinthGenerator(0).setWidth(5).generateLabyrinth();
+        Labyrinth lab = new RandomGenerator(0).setWidth(5).generateLabyrinth();
         System.out.println(lab.toString());
     }
 

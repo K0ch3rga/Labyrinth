@@ -3,26 +3,26 @@ package labyrinth;
 import org.junit.jupiter.api.Test;
 
 import labyrinth.Domain.Labyrinth;
-import labyrinth.Domain.LabyrinthGenerator;
+import labyrinth.Domain.RandomGenerator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LabyrinthGeneratorTest {
-    LabyrinthGenerator labyrinthGenerator = new LabyrinthGenerator(1984);
+    RandomGenerator randomGenerator = new RandomGenerator(1984);
 
     @Test void generatesLabyrinth() { 
-        assertInstanceOf(Labyrinth.class, labyrinthGenerator.generateLabyrinth());
+        assertInstanceOf(Labyrinth.class, randomGenerator.generateLabyrinth());
     }
 
     @Test void correctWidthGeneration() {
         int width = 3;
-        Labyrinth lab = labyrinthGenerator.setWidth(width).generateLabyrinth();
+        Labyrinth lab = randomGenerator.setWidth(width).generateLabyrinth();
         assertEquals(lab.getWidth(), width);
     }
 
     @Test void correctHeigthGeneration() {
         int height =5;
-        Labyrinth lab = labyrinthGenerator.setHeigth(height).generateLabyrinth();
+        Labyrinth lab = randomGenerator.setHeigth(height).generateLabyrinth();
         assertEquals(lab.getHeigth(), height);
     }
 }
